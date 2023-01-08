@@ -1,7 +1,9 @@
 # overist.tistory.com
 [overist.tistory.com](https://overist.tistory.com)에 사용된 [hELLO](https://pronist.tistory.com/5) 스킨입니다.
 
-**hELLO 3.6.5 버전을 포크하여 CSS만 간략히 수정하였습니다.**
+**hELLO 3.6.5 버전을 포크하여 CSS만 간략히 수정하였습니다.** 
+[https://github.com/overist/overist.tistory.com/issues/1] 
+(https://github.com/overist/overist.tistory.com/pull/2)
 - 사이드바
   - 상단 프로필 부분 배경색 지정, 깃허브 바로가기 추가, 패딩/마진 수정
   - 티스토리 툴바 하단의 pronist님(스킨 제작자)의 랜딩 정보를 내 정보로 수정

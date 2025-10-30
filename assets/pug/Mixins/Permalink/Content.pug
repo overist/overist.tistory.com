@@ -173,10 +173,16 @@ script(once='alpine-article-component').
      */
     setAnchorToHeading ($heading, index) {
       const link = this.link($heading, index)
-      const $anchor = this.$anchor($heading, `#${link}`)
 
       $heading.setAttribute('id', link)
-      $heading.innerHTML = $anchor.outerHTML
+      
+      const originalHTML = $heading.innerHTML
+      const $anchor = document.createElement('a')
+      $anchor.setAttribute('href', `#${link}`)
+      $anchor.innerHTML = originalHTML
+      
+      $heading.innerHTML = ''
+      $heading.appendChild($anchor)
     },
 
     /**

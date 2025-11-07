@@ -203,7 +203,7 @@ script(once='alpine-article-component').
       const $anchor = document.createElement('a')
 
       $anchor.setAttribute('href', link)
-      $anchor.textContent = $heading.textContent
+      $anchor.innerHTML = $heading.innerHTML
 
       return $anchor
     },

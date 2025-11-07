@@ -175,12 +175,10 @@ script(once='alpine-article-component').
       const link = this.link($heading, index)
 
       $heading.setAttribute('id', link)
-      
       const originalHTML = $heading.innerHTML
       const $anchor = document.createElement('a')
       $anchor.setAttribute('href', `#${link}`)
       $anchor.innerHTML = originalHTML
-      
       $heading.innerHTML = ''
       $heading.appendChild($anchor)
     },

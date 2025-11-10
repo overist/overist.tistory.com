@@ -316,7 +316,7 @@
         <label>카테고리 접기/펼치기</label>
         <description><![CDATA[ 카테고리 접기/펼치기 ]]></description>
         <type>BOOL</type>
-        <default>true</default>
+        <default>false</default>
       </variable>
     </variablegroup>
     <variablegroup name="글">

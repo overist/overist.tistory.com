@@ -6,7 +6,53 @@
   include Content/Article
   s_if_var_scrollspy
     include Content/Scrollspy
-
+script.
+  window.addEventListener('DOMContentLoaded', () => {
+    // Mermaid setup
+    function setupMermaid() {
+      // Convert pre > code.language-mermaid elements to mermaid diagrams
+      document.querySelectorAll("pre.vbnet").forEach(element => {
+        const codeElement = element.querySelector('code')
+        if (codeElement) {
+          const element = codeElement.parentElement
+          const div = document.createElement('div')
+          div.innerHTML = codeElement.textContent
+          div.className = 'mermaid'
+          
+          element.style.textAlign = 'center'
+          element.removeChild(codeElement)
+          element.appendChild(div)
+        }
+      })
+      
+      // Initialize mermaid
+      const isDark = () => document.querySelector('html').classList.contains('dark')
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: isDark() ? 'dark' : 'default',
+        themeVariables: { fontFamily: 'SUIT, -apple-system, BlinkMacSystemFont, sans-serif' }
+      })
+      
+      // Watch for theme changes
+      new MutationObserver(mutations => {
+        if (mutations.some(m => m.attributeName === 'class')) {
+          mermaid.initialize({
+            startOnLoad: false,
+            theme: isDark() ? 'dark' : 'default',
+            themeVariables: { fontFamily: 'SUIT, -apple-system, BlinkMacSystemFont, sans-serif' }
+          })
+          document.querySelectorAll('.mermaid').forEach((el, i) => {
+            const def = el.textContent || el.innerHTML
+            el.innerHTML = ''
+            mermaid.render(`mermaid-${Date.now()}-${i}`, def, svg => el.innerHTML = svg)
+          })
+        }
+      }).observe(document.documentElement, { attributes: true })
+    }
+    
+    setupMermaid()
+  })
+  
 script(once='alpine-article-component').
   document.addEventListener('alpine:init', () => Alpine.data('content', () => ({
     /**

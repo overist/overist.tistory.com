@@ -4,38 +4,14 @@ aside#sidebar(
   ul.wrap(class='flex flex-col gap-y-6 overflow-x-hidden overflow-y-scroll h-full w-[calc(theme(spacing.s)+theme(spacing.8))] absolute py-6 border-box')
     s_sidebar
       s_sidebar_element
-        // 프로필
+        //- 프로필
         include Sidebar/Profile
       s_sidebar_element
-        // 방문자 수
-        include Sidebar/Counter
-      s_sidebar_element
-        // 검색
+        //- 검색
         include Sidebar/Search
       s_sidebar_element
-        // 카테고리
+        //- 카테고리
         include Sidebar/Category
-      s_sidebar_element
-        // 블로그 메뉴
-        include Sidebar/BlogMenu
-      s_sidebar_element
-        // 링크
-        include Sidebar/MyLinks
-      s_sidebar_element
-        // 공지사항
-        include Sidebar/Notice
-      s_sidebar_element
-        // 인기 글
-        include Sidebar/PopularPosts
-      s_sidebar_element
-        // 태그
-        include Sidebar/RandomTags
-      s_sidebar_element
-        // 최근 댓글
-        include Sidebar/RecentComments
-      s_sidebar_element
-        // 최근 글
-        include Sidebar/RecentPosts
     include Sidebar/Copyright
   template(x-teleport='body')
     #mask(

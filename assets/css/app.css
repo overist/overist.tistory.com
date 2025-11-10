@@ -8,6 +8,31 @@
   button {
     @apply pointer-events-auto;
   }
+
+  /* 스크롤바 스타일 - 라이트 모드 */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* 스크롤바 스타일 - 다크 모드 */
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-h-900;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-h-600 rounded-lg;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-h-500;
+  }
+
+  /* Firefox 스크롤바 */
+  .dark * {
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #111827;
+  }
 }
 
 @layer components {

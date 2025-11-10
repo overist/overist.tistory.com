@@ -52,6 +52,7 @@ style(once='article')
         ol[data-ke-list-type],
         ul[data-ke-list-type],
         table[data-ke-align],
+        blockquote[data-ke-style=style1],
         blockquote[data-ke-style=style2],
         blockquote[data-ke-style=style3] {
           @apply text-h-600 dark:text-h-300;
@@ -182,12 +183,8 @@ style(once='article')
         blockquote[data-ke-style] {
           @apply font-[initial] my-4 text-h-600 dark:text-h-200 font-sans;
 
-          &[data-ke-style=style1] {
-            @apply font-medium text-xl pt-7 leading-loose text-h-600 dark:text-h-200;
-          }
-
-          &[data-ke-style=style2] {
-            @apply border-l-2 border-solid border-h-300 dark:border-h-600 pl-3 pr-1 text-h-400 text-left text-sm leading-loose;
+          &[data-ke-style=style1], &[data-ke-style=style2] {
+            @apply border-l-4 border-solid border-h-300 dark:border-h-600 pl-3 pr-1 text-h-100 text-left text-sm leading-loose;
           }
 
           &[data-ke-style=style3] {

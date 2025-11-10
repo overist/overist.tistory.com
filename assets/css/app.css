@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+
   a,
   button {
     @apply pointer-events-auto;
@@ -137,5 +138,18 @@
 
   .lazyloaded {
     @apply animate-none bg-h-100;
+  }
+
+  /* Overide blockquote style 1 equals style 2 */
+  #tt-body-page blockquote[data-ke-style='style1'],
+  #tt-body-page blockquote[data-ke-style='style2'] {
+    padding-top: 0px;
+    background: none !important;
+    font-weight: 900;
+
+    & * {
+      color: inherit !important;
+      font-family: unset !important;
+    }
   }
 }

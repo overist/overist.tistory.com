@@ -5,11 +5,13 @@
     @apply border-0 bg-h-700 text-h-200 dark:bg-h-600;
   }
 
+  h1,
   h2,
   h3 {
     @apply font-bold;
   }
 
+  h1,
   h2,
   h3,
   th,

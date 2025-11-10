@@ -152,4 +152,8 @@
       font-family: unset !important;
     }
   }
+
+  b {
+    font-weight: 900 !important;
+  }
 }
